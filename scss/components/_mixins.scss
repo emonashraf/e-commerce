@@ -1,0 +1,40 @@
+@use "../custom" as *;
+// GRADIENT MIXIN
+@mixin gradient {
+  background: linear-gradient(
+    to right,
+    rgba($primary, 0.95),
+    rgba($secondary, 0.95)
+  );
+}
+
+@mixin text-gradient {
+  display: inline-block;
+  background-image: linear-gradient(to right, $primary, $secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin hover-color {
+  @include text-gradient;
+  transition: all 0.3s ease;
+}
+
+// ABSOLUTE CENTER
+@mixin absoluteCenter {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+// TRANSITION PROPERTY
+@mixin transitionProperty {
+  transition: all 1s ease;
+}

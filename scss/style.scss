@@ -1,0 +1,31 @@
+@use "custom";
+
+// // IMPORT THE COMPONENTS
+
+@use "components/animations";
+@use "components/buttns";
+@use "components/mixins";
+@use "components/typography";
+@use "components/variable";
+@use "components/product-cards";
+@use "components/carousel";
+
+// // IMPORT THE SECTIONS
+// @use "sections/navbar";
+@use "sections/hero";
+@use "sections/explore-product";
+// @use "sections/campanies";
+// @use "sections/services";
+// @use "sections/testimonials";
+// @use "sections/faq";
+// @use "sections/protfolio";
+// @use "sections/get-started";
+// @use "sections/footer";
+
+body {
+  overflow-x: hidden;
+  font-family: "Noto Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+}

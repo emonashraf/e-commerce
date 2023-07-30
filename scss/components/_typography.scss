@@ -1,0 +1,17 @@
+@use "../custom" as *;
+
+.display-4 {
+  padding-top: 6rem;
+  &--description {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $secondary;
+  }
+  &--heading {
+    font-weight: 700;
+    display: inline-block;
+  }
+}
+.display-6 {
+  font-weight: 700;
+}

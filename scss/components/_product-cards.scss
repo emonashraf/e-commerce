@@ -1,0 +1,129 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.product-card {
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    .primary-img {
+      // animation-name: leFadeOut;
+      // animation-duration: 2s;
+      // @keyframes leFadeOut {
+      //   to {
+      //     opacity: 0;
+      //   }
+      // }
+    }
+    .secondary-img {
+      opacity: 1;
+      visibility: visible;
+      animation-name: leFadeInRight;
+      @keyframes leFadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(60px);
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+    .product-card__action {
+      opacity: 1;
+      visibility: visible;
+      animation-name: leFadeInBottom;
+      @keyframes leFadeInBottom {
+        from {
+          opacity: 0;
+          transform: translateY(100%);
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__img-wrapper {
+    position: relative;
+    .primary-img {
+      transition: all 0.5s ease;
+    }
+    .secondary-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+    }
+  }
+  &__action {
+    @include absoluteCenter;
+    opacity: 0;
+    visibility: hidden;
+    .product-icon {
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background-color: $white;
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+      }
+      &:hover {
+        background-color: $primary;
+        color: $white;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  &__color-input {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    .color-input-btn {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      border: none;
+      &__1 {
+        background-color: $pink;
+      }
+      &__2 {
+        background-color: $black;
+      }
+      &__3 {
+        background-color: $blue;
+      }
+    }
+  }
+  &__title {
+    a {
+      color: $gray-700;
+      text-decoration: none;
+
+      transition: all 0.3s ease;
+      &:hover {
+        @include hover-color;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  .product-price {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $primary;
+    del {
+      color: $gray-800;
+    }
+  }
+  .product-rating {
+    i {
+      color: $yellow;
+    }
+  }
+}
